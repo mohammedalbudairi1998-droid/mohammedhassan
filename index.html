@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>المهندس محمد حسن</title>
-    <!-- استيراد خطوط احترافية -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
@@ -13,7 +12,7 @@
         :root {
             --bg-color: #f7f7f7;
             --text-dark: #2d2d2d;
-            --primary-accent: #4a3b32; /* لون بني هندسي هادئ مثل الموجود في الصورة */
+            --primary-accent: #4a3b32; 
             --white: #ffffff;
         }
 
@@ -27,58 +26,39 @@
         body {
             background-color: var(--bg-color);
             color: var(--text-dark);
-            padding-bottom: 80px; /* مساحة في الأسفل حتى لا يغطي زر الاتصال المحتوى */
+            padding-bottom: 90px; 
         }
 
-        /* الهيدر العلوي (الشعار والقائمة) */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            background-color: transparent;
             max-width: 600px;
             margin: 0 auto;
-        }
-
-        .menu-btn {
-            background: var(--primary-accent);
-            border: none;
-            width: 45px;
-            height: 40px;
-            border-radius: 5px;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            padding: 10px;
-        }
-
-        .menu-btn span {
-            display: block;
-            width: 100%;
-            height: 3px;
-            background-color: var(--white);
-            border-radius: 2px;
         }
 
         .logo-box {
             width: 70px;
             height: 70px;
-            border: 2px solid #ccc;
+            border-radius: 50%;
+            border: 2px solid var(--primary-accent);
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            font-size: 1.5rem;
-            color: var(--primary-accent);
             background: var(--white);
         }
 
-        /* المحتوى الرئيسي */
+        .logo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .hero-section {
             max-width: 600px;
-            margin: 40px auto;
+            margin: 20px auto;
             padding: 0 25px;
         }
 
@@ -87,37 +67,91 @@
             font-weight: 700;
             line-height: 1.3;
             margin-bottom: 10px;
-            color: var(--text-dark);
         }
 
         .subtitle {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: #555;
-            margin-bottom: 30px;
-            font-weight: 400;
+            margin-bottom: 25px;
         }
 
-        /* القائمة النقطية للخبرات */
+        /* الحسابات وروابط التواصل */
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background-color: var(--white);
+            color: var(--primary-accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border: 1px solid #ddd;
+            transition: 0.3s;
+        }
+
+        .social-btn:hover {
+            background-color: var(--primary-accent);
+            color: var(--white);
+        }
+
+        h2.section-title {
+            font-size: 1.4rem;
+            margin: 35px 0 15px 0;
+            border-right: 4px solid var(--primary-accent);
+            padding-right: 10px;
+            color: var(--primary-accent);
+        }
+
         .features-list {
             list-style: none;
         }
 
         .features-list li {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            line-height: 1.7;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+            line-height: 1.6;
             color: #444;
-            position: relative;
-            padding-right: 5px;
         }
 
-        .features-list a {
-            color: #6d5b4f;
-            text-decoration: underline;
+        /* معرض صور الشغل الإنشائي */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .gallery-item {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item p {
+            font-size: 0.85rem;
+            padding: 8px;
+            text-align: center;
+            color: #555;
             font-weight: bold;
         }
 
-        /* شريط الاتصال الثابت في الأسفل */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -127,7 +161,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
         }
 
@@ -136,58 +169,78 @@
             text-decoration: none;
             font-size: 1.3rem;
             font-weight: bold;
-            padding: 20px;
+            padding: 18px;
             width: 100%;
             text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        /* أيقونة اتصال مبسطة */
-        .contact-btn::before {
-            content: "📞";
-            font-size: 1.2rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- الجزء العلوي: القائمة والشعار الشخصي -->
     <div class="navbar">
-        <button class="menu-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        
-        <!-- مربع الشعار (مكتوب فيه حرفين من اسمك MH مثل النمط بالصورة) -->
+        <div></div>
+        <!-- صورتك الشخصية ستظهر هنا بشكل دائري في أعلى اليسار -->
         <div class="logo-box">
-            MH
+            <img src="images/profile.jpg" alt="المهندس محمد حسن">
         </div>
     </div>
 
-    <!-- الجزء الأوسط: الاسم والتعريف والخبرات -->
     <div class="hero-section">
         <h1>المهندس محمد حسن</h1>
         <p class="subtitle">مهندس مدني موقعي متخصص في البنية التحتية وشبكات الصرف الصحي والطرق</p>
         
+        <!-- قسم حسابات التواصل الاجتماعي المهنية -->
+        <div class="social-links">
+            <!-- استبدل الرابط أدناه برابط حسابك الحقيقي على لينكد إن في حال توفره -->
+            <a href="https://linkedin.com" target="_blank" class="social-btn">💼 LinkedIn</a>
+            <a href="mailto:Mohammedalbudairi1998@gmail.com" class="social-btn">✉️ البريد الإلكتروني</a>
+            <!-- زر واتساب يفتح محادثة معك مباشرة -->
+            <a href="https://wa.me/9647826563655" target="_blank" class="social-btn">💬 واتساب</a>
+        </div>
+
+        <h2 class="section-title">الخبرات المهنية</h2>
         <ul class="features-list">
-            <li>1. خبرة عملية في إدارة وتنفيذ شبكات الصرف الصحي وتصريف مياه الأمطار الإنشائية.</li>
+            <li>1. خبرة عمل موقعية في الإشراف على شبكات الصرف الصحي وتصريف مياه الأمطار الإنشائية.</li>
             <li>2. متمرس في أعمال الحفريات العميقة، تسوية الطرق (Leveling)، وفرش وحدل طبقات السبيس.</li>
             <li>3. إشراف وإدارة متكاملة على فحوصات ضبط الجودة (QC) للمواد الإنشائية والخرسانة.</li>
             <li>4. مهندس موقعي سابق في مشاريع استراتيجية ومجمعات سكنية في كربلاء.</li>
             <li>5. متقن للتصميم الهندسي والنمذجة الهيدروليكية باستخدام برامج: AutoCAD و Civil 3D.</li>
         </ul>
+
+        <!-- قسم صور شُغلك ومشاريعك في الموقع -->
+        <h2 class="section-title">صور من مواقع العمل</h2>
+        <div class="gallery-grid">
+            
+            <!-- الصورة الأولى -->
+            <div class="gallery-item">
+                <img src="images/work1.jpg" alt="أعمال شبكات الصرف الصحي">
+                <p>تنفيذ شبكات الصرف الصحي</p>
+            </div>
+            
+            <!-- الصورة الثانية -->
+            <div class="gallery-item">
+                <img src="images/work2.jpg" alt="أعمال تسوية الطرق">
+                <p>أعمال السبيس والحدل للموقع</p>
+            </div>
+            
+            <!-- الصورة الثالثة -->
+            <div class="gallery-item">
+                <img src="images/work3.jpg" alt="أعمال الحفريات والمطابق">
+                <p>الحفريات العميقة والمطابق</p>
+            </div>
+            
+            <!-- الصورة الرابعة -->
+            <div class="gallery-item">
+                <img src="images/work4.jpg" alt="إدارة المختبر والمواد">
+                <p>ضبط جودة المواد الإنشائية</p>
+            </div>
+
+        </div>
     </div>
 
-    <!-- الجزء السفلي: زر التواصل المثبت -->
+    <!-- زر الاتصال المباشر المثبت بالأسفل -->
     <div class="bottom-nav">
-        <a href="tel:+9647826563655" class="contact-btn">تواصل معي</a>
+        <a href="tel:+9647826563655" class="contact-btn">📞 اتصل بي الآن</a>
     </div>
 
 </body>
